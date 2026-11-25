@@ -38,3 +38,10 @@ html{scrollbar-width:thin;scrollbar-color:#666866 #171819}
 ::-webkit-scrollbar-thumb:hover{background:#888a87}
 ::-webkit-scrollbar-button{display:none;width:0;height:0}
 @media(max-width:580px){.platform-label{justify-content:flex-start}}
+
+/* Keep page scrolling native while hiding platform scrollbar buttons. */
+html.custom-page-scrollbar{scrollbar-width:none}
+html.custom-page-scrollbar::-webkit-scrollbar{display:none}
+.page-scrollbar{position:fixed;z-index:20;inset-block:3px;right:2px;width:10px;touch-action:none}
+.page-scrollbar-thumb{position:absolute;top:0;right:1px;width:5px;background:#666866;border-radius:8px;will-change:transform}
+.page-scrollbar:hover .page-scrollbar-thumb{background:#888a87}
