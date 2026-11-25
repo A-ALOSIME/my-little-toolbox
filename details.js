@@ -38,7 +38,7 @@ const appDetails = {
   'HWiNFO': [['عرض تفاصيل المعالج والذاكرة وبقية المكونات','مراقبة درجات الحرارة والجهد وسرعات المراوح'],['Inspect CPU, memory and other hardware details','Monitor temperatures, voltages and fan speeds']],
   'CrystalDiskInfo': [['عرض حالة الأقراص وبيانات SMART','متابعة درجة الحرارة وساعات التشغيل عند توفرها'],['View drive health and SMART data','Monitor temperature and power-on hours where available']],
   'OCCT': [['اختبار استقرار المعالج والبطاقة الرسومية والذاكرة','مراقبة قراءات المكونات أثناء الاختبار'],['Test CPU, GPU and memory stability','Monitor hardware readings during tests']],
-  'MemTest': [['فحص الذاكرة المتاحة للكشف عن الأخطاء','يعمل من داخل ويندوز؛ هذا إصدار HCI Design'],['Test available memory for errors','Runs inside Windows; this is the HCI Design edition']],
+  'MemTest64': [['اختبار استقرار الذاكرة والكشف عن الأخطاء','يعمل داخل ويندوز 64 بت دون تثبيت أو إعادة تشغيل'],['Test memory stability and detect errors','Runs inside 64-bit Windows without installation or reboot']],
   'CPU-Z': [['عرض مواصفات المعالج واللوحة الأم والذاكرة','متابعة ترددات المعالج والذاكرة'],['Inspect CPU, motherboard and memory specifications','View CPU and memory frequencies']],
   'GPU-Z': [['عرض مواصفات بطاقة الرسوميات','متابعة حساسات البطاقة واستخدامها'],['Inspect graphics card specifications','Monitor GPU sensors and usage']],
   'Firefox': [['تصفح الويب ومزامنة المفضلة وكلمات المرور','دعم الإضافات وحماية التتبع'],['Browse the web and sync bookmarks and passwords','Extensions and tracking protection']],

@@ -39,7 +39,7 @@ const apps = [
   ['HWiNFO','utility','hwinfo.com','https://www.hwinfo.com/download/',['Windows'],'Detailed hardware information and sensor monitoring.','يعرض تفاصيل الجهاز وقراءات الحساسات.'],
   ['CrystalDiskInfo','utility','crystalmark.info','https://crystalmark.info/en/software/crystaldiskinfo/',['Windows'],'Check drive health and SMART data.','لمتابعة صحة الأقراص وقراءات SMART.'],
   ['OCCT','utility','ocbase.com','https://www.ocbase.com/download-personal',['Windows','Linux'],'Test hardware stability and monitor sensors.','لاختبار استقرار مكونات الجهاز ومراقبتها.'],
-  ['MemTest','utility','hcidesign.com','https://www.hcidesign.com/memtest/download.html',['Windows'],'Test available RAM for errors from Windows.','لاختبار الذاكرة المتاحة والكشف عن أخطائها من داخل ويندوز.'],
+  ['MemTest64','utility','techpowerup.com','https://www.techpowerup.com/memtest64/',['Windows'],'A portable memory stability tester for 64-bit Windows.','أداة محمولة لاختبار استقرار الذاكرة من داخل ويندوز 64 بت.'],
   ['CPU-Z','utility','cpuid.com','https://www.cpuid.com/softwares/cpu-z.html',['Windows'],'View processor, memory and motherboard information.','يعرض معلومات المعالج والذاكرة واللوحة الأم.'],
   ['GPU-Z','utility','techpowerup.com','https://www.techpowerup.com/gpuz/',['Windows'],'View graphics card information and sensor readings.','يعرض معلومات بطاقة الرسوميات وقراءات الحساسات.'],
   ['Firefox','browsers','mozilla.org','https://www.mozilla.org/firefox/new/',['Windows','macOS','Linux'],'A web browser from Mozilla.','متصفح ويب من موزيلا.'],
