@@ -4,7 +4,7 @@ const iconSources = {
   'Ubisoft Connect': 'https://cdn.jsdelivr.net/gh/AdmiringWorm/chocolatey-packages@c83e5c78e07916aca67a4eabb48fc5b81f17cef7/automatic/ubisoft-connect/icons/128x128.png',
   'EA app': 'https://cdn.simpleicons.org/ea/FF474C',
   'Epic Games Store': 'https://cdn.simpleicons.org/epicgames/FFFFFF',
-  'DaVinci Resolve': 'https://cdn.simpleicons.org/davinciresolve/FFFFFF',
+  'DaVinci Resolve': 'assets/davinci-resolve.png',
   'Everything': 'https://cdn.jsdelivr.net/gh/chocolatey-community/chocolatey-packages@cf277846cf6b5436461ebd5f21b00efd67ee9910/icons/everything.png',
   'Revo Uninstaller': 'https://cdn.jsdelivr.net/gh/asheroto/ChocolateyPackages@master/revo-uninstaller/icon.png',
   'HandBrake': 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons@main/svg/handbrake.svg',
