@@ -2,6 +2,7 @@
 const appDetails = {
   'LocalSend': [['إرسال الملفات والنصوص بين الأجهزة على الشبكة المحلية','لا يتطلب حسابًا أو اتصالًا بالإنترنت'],['Send files and text between devices on the local network','No account or internet connection required']],
   'Everything': [['البحث الفوري عن الملفات والمجلدات بالاسم','تصفية النتائج واستخدام البحث المتقدم'],['Find files and folders by name','Filter results and use advanced search']],
+  '7-Zip': [['ضغط الملفات وفك صيغ متعددة مثل 7z وZIP','تشفير الملفات المضغوطة بكلمة مرور','نسخة Windows بواجهة رسومية؛ نسختا macOS وLinux عبر سطر الأوامر'],['Compress and extract archive formats including 7z and ZIP','Encrypt archives with a password','Windows has a graphical interface; macOS and Linux use the command line']],
   'Stremio': [['مشاهدة المحتوى من مصادر تدعمها الإضافات','تنظيم الأفلام والمسلسلات في مكتبة'],['Watch content from sources provided by add-ons','Organize films and series in a library']],
   'CapFrameX': [['تسجيل معدل الإطارات وأوقات كل إطار','مقارنة نتائج الأداء بين جلسات اللعب'],['Capture frame rates and frame times','Compare performance between sessions']],
   'Revo Uninstaller': [['إزالة البرامج المثبتة','البحث عن الملفات وإدخالات السجل المتبقية بعد الإزالة'],['Uninstall installed programs','Scan for leftover files and registry entries']],

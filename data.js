@@ -3,6 +3,7 @@ const apps = [
   ['LocalSend','utility','localsend.org','https://localsend.org/download',['Windows','macOS','Linux'],'Share files between nearby devices.','نقل الملفات بين الأجهزة على الشبكة المحلية دون حساب أو اتصال بالإنترنت.'],
   ['ArtCraft Apps','creative','getartcraft.com','https://getartcraft.com/apps',['Windows','macOS','Linux'],'A suite of creative and productivity apps, managed by one launcher.','مجموعة تطبيقات للإبداع والعمل، يمكن تثبيتها وتحديثها من مشغّل واحد.','artcraft.html'],
   ['Everything','utility','voidtools.com','https://www.voidtools.com/downloads/',['Windows'],'Find files and folders instantly on Windows.','بحث سريع عن الملفات والمجلدات بالاسم على ويندوز.'],
+  ['7-Zip','utility','7-zip.org','https://www.7-zip.org/download.html',['Windows','macOS','Linux'],'Compress and extract archives. On macOS and Linux, the official release is command-line only.','ضغط الملفات وفكّها. نسخة macOS وLinux الرسمية تعمل عبر سطر الأوامر.'],
   ['Stremio','media','stremio.com','https://www.stremio.com/downloads',['Windows','macOS','Linux'],'Organize and watch video entertainment.','مشغّل لمشاهدة الأفلام والمسلسلات باستخدام الإضافات.'],
   ['CapFrameX','utility','capframex.com','https://www.capframex.com/download',['Windows'],'Capture and analyze game frame times.','قياس أداء الألعاب وتحليل معدل الإطارات وأوقاتها.'],
   ['Revo Uninstaller','utility','revouninstaller.com','https://www.revouninstaller.com/products/revo-uninstaller-free/',['Windows'],'Uninstall apps and remove leftover files.','إزالة البرامج والبحث عن الملفات وإدخالات السجل المتبقية.'],
