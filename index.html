@@ -10,10 +10,10 @@
   <script src="app.js" defer></script>
 </head>
 <body>
-  <header class="site-header"><a class="brand" href="./"><span class="brand-mark">✳</span><span>My Little<br>Toolbox<span class="brand-dot">.</span></span></a><div class="header-actions"><button id="language" class="language" type="button" lang="en">English</button></div></header>
+  <header class="site-header"><a class="brand" href="./"><span>My Little<br>Toolbox<span class="brand-dot">.</span></span></a><div class="header-actions"><button id="language" class="language" type="button" lang="en">English</button></div></header>
   <main class="wrap">
-    <section class="intro"><div><p class="intro-label" data-i18n="eyebrow">أدوات تستحق مكانًا على جهازك</p><h1 data-i18n="title">برامج مفيدة،<br>في مكان واحد.</h1><p class="lead" data-i18n="lead">مجموعة مختارة من التطبيقات للعمل والإبداع وكل ما بينهما. اكتشف ما يناسبك وحمّله من مصدره الرسمي.</p></div><div class="intro-art" aria-hidden="true"><span>✳</span></div></section>
-    <section aria-labelledby="collection-title" class="collection"><div class="section-heading"><div><p class="intro-label" data-i18n="browse">استكشف المجموعة</p><h2 id="collection-title" data-i18n="collection">كل الأدوات</h2></div><span id="count" class="count"></span></div>
+    <section class="intro"><h1 data-i18n="title">صندوق التطبيقات</h1></section>
+    <section aria-labelledby="collection-title" class="collection"><div class="section-heading"><div><h2 id="collection-title" data-i18n="collection">كل الأدوات</h2></div><span id="count" class="count"></span></div>
       <div class="toolbar"><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" autocomplete="off" data-placeholder="search" aria-label="البحث عن تطبيق"></label><label class="platform-label"><span data-i18n="platform">النظام</span><select id="platform"><option value="all" data-i18n="allPlatforms">كل الأنظمة</option><option>Windows</option><option>macOS</option><option>Linux</option><option>Web</option></select></label></div>
       <div id="categories" class="categories" aria-label="التصنيفات"></div><div id="apps" class="app-grid"></div><p id="empty" class="empty" hidden data-i18n="empty">ما لقينا تطبيقات تطابق بحثك.</p>
     </section>
