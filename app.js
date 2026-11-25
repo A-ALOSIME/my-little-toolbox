@@ -16,7 +16,7 @@ const noDescription = new Set(['WhatsApp','Telegram','Discord','ChatGPT','Claude
 let language=localStorage.getItem('toolbox-language')==='en'?'en':'ar';let category='all';
 const $=selector=>document.querySelector(selector);const categories=['all','utility','creative','media','productivity','games','ai','communication','development'];
 function t(key){return translations[language][key]}
-function render(){document.documentElement.lang=language;document.documentElement.dir=language==='ar'?'rtl':'ltr';document.querySelectorAll('[data-i18n]').forEach(el=>el.innerHTML=t(el.dataset.i18n));$('#language').textContent=language==='ar'?'English':'العربية';$('#language').lang=language==='ar'?'en':'ar';$('#search').placeholder=t('search');$('#search').setAttribute('aria-label',t('search'));$('#close').setAttribute('aria-label',t('close'));$('#categories').setAttribute('aria-label',language==='ar'?'التصنيفات':'Categories');$('#categories').innerHTML=categories.map(c=>`<button type="button" class="category" data-category="${c}" aria-pressed="${category===c}">${t(c)}</button>`).join('');const query=$('#search').value.trim().toLocaleLowerCase();const platform=$('#platform').value;const results=apps.filter(a=>(category==='all'||a.category===category)&&(platform==='all'||a.platforms.includes(platform))&&[a.name,a.ar,a.en,t(a.category)].some(v=>v.toLocaleLowerCase().includes(query)));$('#count').textContent=`${results.length} ${t('count')}`;$('#empty').hidden=results.length!==0;$('#apps').innerHTML=results.map(a=>`<article class="app-card" data-card="${a.name}"><div class="card-visual"><img class="app-icon" loading="lazy" src="${iconSources[a.name] || 'https://www.google.com/s2/favicons?domain=' + a.domain + '&sz=128'}" alt="" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="fallback-icon" hidden>${a.name[0]}</span></div><div class="card-body"><h3 class="card-title"><bdi dir="ltr">${a.name}</bdi></h3>${noDescription.has(a.name) ? '' : `<p class="card-description">${a[language]}</p>`}<div class="platforms">${a.platforms.map(p=>`<span>${p}</span>`).join('')}</div><div class="card-actions"><a class="download" href="${a.url}" target="_blank" rel="noopener noreferrer">${t('download')}</a>${a.page?`<a class="details-link" href="${a.page}">${t('details')}</a>`:`<button class="details-link" data-app="${a.name}" type="button">${t('details')}</button>`}</div></div></article>`).join('')}
+function render(){document.documentElement.lang=language;document.documentElement.dir=language==='ar'?'rtl':'ltr';document.querySelectorAll('[data-i18n]').forEach(el=>el.innerHTML=t(el.dataset.i18n));$('#language').textContent=language==='ar'?'English':'العربية';$('#language').lang=language==='ar'?'en':'ar';$('#search').placeholder=t('search');$('#search').setAttribute('aria-label',t('search'));$('#close').setAttribute('aria-label',t('close'));$('#categories').setAttribute('aria-label',language==='ar'?'التصنيفات':'Categories');$('#categories').innerHTML=categories.map(c=>`<button type="button" class="category" data-category="${c}" aria-pressed="${category===c}">${t(c)}</button>`).join('');const query=$('#search').value.trim().toLocaleLowerCase();const platform=$('#platform').value;$('#platform-value').textContent=platform==='all'?t('allPlatforms'):platform;document.querySelectorAll('[data-platform]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.platform===platform)));const results=apps.filter(a=>(category==='all'||a.category===category)&&(platform==='all'||a.platforms.includes(platform))&&[a.name,a.ar,a.en,t(a.category)].some(v=>v.toLocaleLowerCase().includes(query)));$('#count').textContent=`${results.length} ${t('count')}`;$('#empty').hidden=results.length!==0;$('#apps').innerHTML=results.map(a=>`<article class="app-card" data-card="${a.name}"><div class="card-visual"><img class="app-icon" loading="lazy" src="${iconSources[a.name] || 'https://www.google.com/s2/favicons?domain=' + a.domain + '&sz=128'}" alt="" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="fallback-icon" hidden>${a.name[0]}</span></div><div class="card-body"><h3 class="card-title"><bdi dir="ltr">${a.name}</bdi></h3>${noDescription.has(a.name) ? '' : `<p class="card-description">${a[language]}</p>`}<div class="platforms">${a.platforms.map(p=>`<span>${p}</span>`).join('')}</div><div class="card-actions"><a class="download" href="${a.url}" target="_blank" rel="noopener noreferrer">${t('download')}</a>${a.page?`<a class="details-link" href="${a.page}">${t('details')}</a>`:`<button class="details-link" data-app="${a.name}" type="button">${t('details')}</button>`}</div></div></article>`).join('')}
 
 function openDetails(a) {
   const lines = appDetails[a.name]?.[language === 'ar' ? 0 : 1] || [a[language]];
@@ -25,7 +25,23 @@ function openDetails(a) {
 }
 $('#language').addEventListener('click',()=>{language=language==='ar'?'en':'ar';localStorage.setItem('toolbox-language',language);render()});
 $('#search').addEventListener('input',render);
-$('#platform').addEventListener('change',render);
+$('#platform-filter').addEventListener('click',e=>{
+  const choice=e.target.closest('[data-platform]');
+  if(!choice) return;
+  $('#platform').value=choice.dataset.platform;
+  $('#platform-filter').open=false;
+  render();
+  $('#platform-trigger').focus();
+});
+document.addEventListener('click',e=>{
+  if(!$('#platform-filter').contains(e.target)) $('#platform-filter').open=false;
+});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape' && $('#platform-filter').open) {
+    $('#platform-filter').open=false;
+    $('#platform-trigger').focus();
+  }
+});
 $('#categories').addEventListener('click',e=>{const b=e.target.closest('[data-category]');if(b){category=b.dataset.category;render()}});
 $('#apps').addEventListener('click',e=>{
   if(e.target.closest('a')) return;

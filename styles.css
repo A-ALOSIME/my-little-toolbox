@@ -17,3 +17,24 @@
 .feature-list{color:#d0d0cc;line-height:1.8;padding-inline-start:1.3em;margin:18px 0 24px}
 .feature-list li+li{margin-top:6px}
 @media(max-width:580px){.site-header{height:72px}.search{max-width:none}.intro{padding:28px 0 34px}}
+
+/* Quiet controls and scrollbars */
+.dialog-actions a:not(.download),.craft a{text-decoration:none}
+.search{border:0;background:#222425;border-radius:5px;padding:0 12px}
+.platform-label{gap:10px}
+.platform-filter{position:relative}
+.platform-filter summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;min-width:140px;padding:9px 12px;border-radius:5px;background:#222425;color:#e5e4e0;cursor:pointer}
+.platform-filter summary::-webkit-details-marker{display:none}
+.platform-filter summary:focus-visible{outline:2px solid #c8b99f;outline-offset:4px}
+.chevron{width:7px;height:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-2px)}
+.platform-filter[open] .chevron{transform:rotate(225deg) translate(-1px,-1px)}
+.platform-menu{position:absolute;inset-inline-start:0;top:calc(100% + 6px);z-index:5;min-width:100%;padding:5px;background:#292b2b;border:1px solid #484a49;border-radius:5px;box-shadow:0 10px 24px #0006}
+.platform-menu button{display:block;width:100%;padding:8px 10px;border:0;border-radius:3px;background:transparent;text-align:start;color:#e5e4e0;white-space:nowrap}
+.platform-menu button:hover,.platform-menu button[aria-pressed=true]{background:#3c3e3d}
+html{scrollbar-width:thin;scrollbar-color:#666866 #171819}
+::-webkit-scrollbar{width:7px;height:7px}
+::-webkit-scrollbar-track{background:#171819}
+::-webkit-scrollbar-thumb{background:#666866;border-radius:8px}
+::-webkit-scrollbar-thumb:hover{background:#888a87}
+::-webkit-scrollbar-button{display:none;width:0;height:0}
+@media(max-width:580px){.platform-label{justify-content:flex-start}}

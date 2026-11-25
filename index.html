@@ -5,17 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="مجموعة مختارة من التطبيقات المفيدة لأجهزتك.">
   <title>My Little Toolbox</title>
-  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="stylesheet" href="styles.css?v=5">
   <script src="data.js?v=3" defer></script>
   <script src="details.js?v=3" defer></script>
-  <script src="app.js?v=4" defer></script>
+  <script src="app.js?v=5" defer></script>
 </head>
 <body>
   <header class="site-header"><a class="brand" href="./"><span>My Little Toolbox</span></a><div class="header-actions"><button id="language" class="language" type="button" lang="en">English</button></div></header>
   <main class="wrap">
     <section class="intro"><h1 data-i18n="title">صندوق التطبيقات</h1></section>
     <section aria-labelledby="collection-title" class="collection"><div class="section-heading"><div><h2 id="collection-title" data-i18n="collection">كل الأدوات</h2></div><span id="count" class="count"></span></div>
-      <div class="toolbar"><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" autocomplete="off" data-placeholder="search" aria-label="البحث عن تطبيق"></label><label class="platform-label"><span data-i18n="platform">النظام</span><select id="platform"><option value="all" data-i18n="allPlatforms">كل الأنظمة</option><option>Windows</option><option>macOS</option><option>Linux</option><option>Web</option></select></label></div>
+      <div class="toolbar"><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" autocomplete="off" data-placeholder="search" aria-label="البحث عن تطبيق"></label><div class="platform-label"><span id="platform-label" data-i18n="platform">النظام</span><input id="platform" type="hidden" value="all"><details class="platform-filter" id="platform-filter"><summary id="platform-trigger" aria-labelledby="platform-label platform-value"><span id="platform-value">كل الأنظمة</span><span class="chevron" aria-hidden="true"></span></summary><div class="platform-menu" role="group" aria-labelledby="platform-label"><button type="button" data-platform="all" data-i18n="allPlatforms" aria-pressed="true">كل الأنظمة</button><button type="button" data-platform="Windows" aria-pressed="false">Windows</button><button type="button" data-platform="macOS" aria-pressed="false">macOS</button><button type="button" data-platform="Linux" aria-pressed="false">Linux</button><button type="button" data-platform="Web" aria-pressed="false">Web</button></div></details></div></div>
       <div id="categories" class="categories" aria-label="التصنيفات"></div><div id="apps" class="app-grid"></div><p id="empty" class="empty" hidden data-i18n="empty">ما لقينا تطبيقات تطابق بحثك.</p>
     </section>
   </main>
