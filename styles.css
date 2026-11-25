@@ -2,3 +2,18 @@
 
 /* Compact header and equal card alignment when descriptions are omitted. */
 .intro{padding:54px 0}.intro h1{margin:0;font-size:clamp(36px,4.5vw,58px)}.card-body .platforms{margin-top:auto;padding-top:8px}.card-description{min-height:0}
+
+/* Catalog refinements */
+.site-header{border-bottom:0;height:84px}
+.brand{font-size:16px;letter-spacing:0;white-space:nowrap}
+.intro{border-bottom:1px solid #373838;padding:35px 0 42px}
+.collection{padding-top:48px}
+.search{max-width:300px;background:transparent;border:0;border-bottom:1px solid #555;border-radius:0;padding:0 4px}
+.search input{padding:9px 0}
+.platform-label select{background:transparent;border:0;border-bottom:1px solid #555;border-radius:0;padding:9px 4px}
+.app-card{cursor:pointer}
+.app-card:hover{border-color:#777}
+.card-title{direction:inherit;text-align:start}
+.feature-list{color:#d0d0cc;line-height:1.8;padding-inline-start:1.3em;margin:18px 0 24px}
+.feature-list li+li{margin-top:6px}
+@media(max-width:580px){.site-header{height:72px}.search{max-width:none}.intro{padding:28px 0 34px}}
