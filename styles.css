@@ -45,3 +45,8 @@ html.custom-page-scrollbar::-webkit-scrollbar{display:none}
 .page-scrollbar{position:fixed;z-index:20;inset-block:3px;right:2px;width:10px;touch-action:none}
 .page-scrollbar-thumb{position:absolute;top:0;right:1px;width:5px;background:#666866;border-radius:8px;will-change:transform}
 .page-scrollbar:hover .page-scrollbar-thumb{background:#888a87}
+
+/* Align platform tags with the current language. */
+html[dir=ltr] .platforms{justify-content:flex-start}
+.card-open{border:0;padding:0;background:transparent;color:inherit;font:inherit;text-align:inherit}
+.card-open:focus-visible,.dialog-actions a:focus-visible{outline:1px solid #c8b99f;outline-offset:4px;border-radius:3px}

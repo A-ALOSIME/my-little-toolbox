@@ -8,7 +8,11 @@ const iconSources = {
   'Git': 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons@main/svg/git.svg',
   'Docker Desktop': 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons@main/svg/docker.svg',
   'Python': 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons@main/svg/python.svg',
-  'Wireshark': 'https://cdn.simpleicons.org/wireshark/1679A7',
+  'Wireshark': 'assets/wireshark.png',
+  'Ladybird': 'assets/ladybird.png',
+  'Talon': 'assets/talon-official.png',
+  'MemTest64': 'https://tpucdn.com/download/images/111_icon-v1492680160.png',
+  'GPU-Z': 'https://tpucdn.com/download/images/37_icon-v1795095291.png',
   'Firefox': 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons@main/svg/firefox.svg',
   'Zen Browser': 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons@main/svg/zen-browser.svg',
   'LibreWolf': 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons@main/svg/librewolf.svg',
@@ -29,7 +33,7 @@ const noDescription = new Set(['WhatsApp','Telegram','Discord','ChatGPT','Claude
 let language=localStorage.getItem('toolbox-language')==='en'?'en':'ar';let category='all';
 const $=selector=>document.querySelector(selector);const categories=['all','utility','creative','media','productivity','games','ai','communication','development','browsers','engines'];
 function t(key){return translations[language][key]}
-function render(){document.documentElement.lang=language;document.documentElement.dir=language==='ar'?'rtl':'ltr';document.querySelectorAll('[data-i18n]').forEach(el=>el.innerHTML=t(el.dataset.i18n));$('#language').textContent=language==='ar'?'English':'العربية';$('#language').lang=language==='ar'?'en':'ar';$('#search').placeholder=t('search');$('#search').setAttribute('aria-label',t('search'));$('#close').setAttribute('aria-label',t('close'));$('#categories').setAttribute('aria-label',language==='ar'?'التصنيفات':'Categories');$('#categories').innerHTML=categories.map(c=>`<button type="button" class="category" data-category="${c}" aria-pressed="${category===c}">${t(c)}</button>`).join('');const query=$('#search').value.trim().toLocaleLowerCase();const platform=$('#platform').value;$('#platform-value').textContent=platform==='all'?t('allPlatforms'):platform;document.querySelectorAll('[data-platform]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.platform===platform)));const results=apps.filter(a=>(category==='all'||a.category===category)&&(platform==='all'||a.platforms.includes(platform))&&[a.name,a.ar,a.en,t(a.category)].some(v=>v.toLocaleLowerCase().includes(query)));$('#count').textContent=`${results.length} ${t('count')}`;$('#empty').hidden=results.length!==0;$('#apps').innerHTML=results.map(a=>`<article class="app-card" data-card="${a.name}"><div class="card-visual"><img class="app-icon" loading="lazy" src="${iconSources[a.name] || 'https://www.google.com/s2/favicons?domain=' + a.domain + '&sz=128'}" alt="" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="fallback-icon" hidden>${a.name[0]}</span></div><div class="card-body"><h3 class="card-title"><bdi dir="ltr">${a.name}</bdi></h3>${noDescription.has(a.name) ? '' : `<p class="card-description">${a[language]}</p>`}<div class="platforms">${a.platforms.map(p=>`<span>${p}</span>`).join('')}</div><div class="card-actions"><a class="download" href="${a.url}" target="_blank" rel="noopener noreferrer">${t('download')}</a>${a.page?`<a class="details-link" href="${a.page}">${t('details')}</a>`:`<button class="details-link" data-app="${a.name}" type="button">${t('details')}</button>`}</div></div></article>`).join('')}
+function render(){document.documentElement.lang=language;document.documentElement.dir=language==='ar'?'rtl':'ltr';document.querySelectorAll('[data-i18n]').forEach(el=>el.innerHTML=t(el.dataset.i18n));$('#language').textContent=language==='ar'?'English':'العربية';$('#language').lang=language==='ar'?'en':'ar';$('#search').placeholder=t('search');$('#search').setAttribute('aria-label',t('search'));$('#close').setAttribute('aria-label',t('close'));$('#categories').setAttribute('aria-label',language==='ar'?'التصنيفات':'Categories');$('#categories').innerHTML=categories.map(c=>`<button type="button" class="category" data-category="${c}" aria-pressed="${category===c}">${t(c)}</button>`).join('');const query=$('#search').value.trim().toLocaleLowerCase();const platform=$('#platform').value;$('#platform-value').textContent=platform==='all'?t('allPlatforms'):platform;document.querySelectorAll('[data-platform]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.platform===platform)));const results=apps.filter(a=>(category==='all'||a.category===category)&&(platform==='all'||a.platforms.includes(platform))&&[a.name,a.ar,a.en,t(a.category)].some(v=>v.toLocaleLowerCase().includes(query)));$('#count').textContent=`${results.length} ${t('count')}`;$('#empty').hidden=results.length!==0;$('#apps').innerHTML=results.map(a=>`<article class="app-card" data-card="${a.name}"><div class="card-visual"><img class="app-icon" loading="lazy" src="${iconSources[a.name] || 'https://www.google.com/s2/favicons?domain=' + a.domain + '&sz=128'}" alt="" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="fallback-icon" hidden>${a.name[0]}</span></div><div class="card-body"><h3 class="card-title"><button class="card-open" type="button"><bdi dir="ltr">${a.name}</bdi></button></h3>${noDescription.has(a.name) ? '' : `<p class="card-description">${a[language]}</p>`}<div class="platforms">${a.platforms.map(p=>`<span>${p}</span>`).join('')}</div><div class="card-actions"><a class="download" href="${a.url}" target="_blank" rel="noopener noreferrer">${t('download')}</a>${a.page?`<a class="details-link" href="${a.page}">${t('details')}</a>`:`<button class="details-link" data-app="${a.name}" type="button">${t('details')}</button>`}</div></div></article>`).join('')}
 
 function openDetails(a) {
   const lines = appDetails[a.name]?.[language === 'ar' ? 0 : 1] || [a[language]];
@@ -63,6 +67,12 @@ $('#apps').addEventListener('click',e=>{
   const app=apps.find(a=>a.name===card.dataset.card);
   if(app.page) { window.location.href=app.page; return; }
   openDetails(app);
+});
+$('#details').addEventListener('keydown',e=>{
+  if(e.key!=='ArrowRight' && e.key!=='ArrowLeft') return;
+  e.preventDefault();
+  const links=$('#dialog-body').querySelectorAll('.dialog-actions a');
+  links[e.key==='ArrowRight'?0:1]?.focus();
 });
 $('#close').addEventListener('click',()=>$('#details').close());
 $('#details').addEventListener('click',e=>{
