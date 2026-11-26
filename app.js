@@ -15,7 +15,7 @@ const iconSources = {
   'GPU-Z': 'https://tpucdn.com/download/images/37_icon-v1795095291.png',
   'Firefox': 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons@main/svg/firefox.svg',
   'Zen Browser': 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons@main/svg/zen-browser.svg',
-  'LibreWolf': 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons@main/svg/librewolf.svg',
+  'LibreWolf': 'assets/librewolf.svg',
   '7-Zip': 'https://cdn.simpleicons.org/7zip/FFFFFF',
   'WhatsApp': 'https://cdn.simpleicons.org/whatsapp/25D366',
   'Ubisoft Connect': 'https://cdn.jsdelivr.net/gh/AdmiringWorm/chocolatey-packages@c83e5c78e07916aca67a4eabb48fc5b81f17cef7/automatic/ubisoft-connect/icons/128x128.png',
